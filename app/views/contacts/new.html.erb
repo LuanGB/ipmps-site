@@ -1,7 +1,7 @@
 <aside id="fh5co-hero">
   <div class="flexslider">
     <ul class="slides">
-      <li style="background-image: url(images/img_bg_2.jpg);">
+      <li style="background-image: url(<%= image_path("img_bg_2.jpg") %>);">
         <div class="overlay"></div>
         <div class="container-fluid">
           <div class="row">
@@ -39,7 +39,7 @@
         <%= form_with(model: @contact) do |form| %>
           <% if @contact.errors.any? %>
             <div style="color: red">
-              <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+              <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
               <ul>
                 <% @contact.errors.each do |error| %>
@@ -49,39 +49,31 @@
             </div>
           <% end %>
 
-          <div>
-            <%= form.label :name, style: "display: block" %>
-            <%= form.text_field :name %>
+          <div class="form-group">
+            <%= form.text_field :name, class: "form-control", placeholder: "Name" %>
+          </div>
+
+          <div class="form-group">
+            <%= form.text_field :email, class: "form-control", placeholder: "Email" %>
+          </div>
+
+          <div class="form-group">
+            <%= form.text_field :phone, class: "form-control", placeholder: "Phone" %>
+          </div>
+
+          <div class="form-group">
+            <%= form.text_field :address, class: "form-control", placeholder: "Address" %>
+          </div>
+
+          <div class="form-group">
+            <%= form.textarea :message, class: "form-control", placeholder: "Message" %>
           </div>
 
           <div>
-            <%= form.label :email, style: "display: block" %>
-            <%= form.text_field :email %>
-          </div>
-
-          <div>
-            <%= form.label :phone, style: "display: block" %>
-            <%= form.text_field :phone %>
-          </div>
-
-          <div>
-            <%= form.label :address, style: "display: block" %>
-            <%= form.text_field :address %>
-          </div>
-
-          <div>
-            <%= form.label :message, style: "display: block" %>
-            <%= form.textarea :message %>
-          </div>
-
-          <div>
-            <%= form.submit %>
+            <%= form.submit class: "btn btn-primary btn-modify" %>
           </div>
         <% end %>
 <!-- <div class="col-md-6">
-<div class="form-group">
-<input type="text" class="form-control" placeholder="Name">
-</div>
 </div>
 <div class="col-md-6">
 <div class="form-group">
