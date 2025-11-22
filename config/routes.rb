@@ -3,6 +3,13 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
 
+
+  root to: 'site#home'
+
+  get 'home', to: 'site#home', as: 'home'
+  get 'about', to: 'site#about', as: 'about'
+  get 'new', to: 'contacts#new', as: 'new'
+  
   resources :contacts, only: %i[ new create ]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
