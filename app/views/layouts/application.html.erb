@@ -53,13 +53,7 @@
 
   <!-- Modernizr JS -->
   <%= javascript_include_tag "modernizr-2.6.2.min" %>
-  <!-- FOR IE9 below -->
-  <!--[if lt IE 9]>
-  <%= javascript_include_tag "respond.min" %>
-  <![endif]-->
 
-  <%# Includes all stylesheet files in app/assets/stylesheets %>
-  <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
   <%= javascript_importmap_tags %>
   </head>
   <body>
