@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'icomoon';
-  src: url("/icomoon/icomoon.eot?srf3rx");
-  src: url("/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("/icomoon/icomoon.woff?srf3rx") format("woff"), url("/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
+  src: url("assets/icomoon/icomoon.eot?srf3rx");
+  src: url("assets/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("assets/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("assets/icomoon/icomoon.woff?srf3rx") format("woff"), url("assets/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -354,7 +354,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5co-hero {
   height: 500px;
-  background: #fff url(../images/loader.gif) no-repeat center center;
+  background: #fff url(loader.gif) no-repeat center center;
   width: 100%;
   float: left;
 }
@@ -1335,7 +1335,7 @@ input[type="text"] {
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: url(../images/loader.gif) center no-repeat #fff;
+  background: url(loader.gif) center no-repeat #fff;
 }
 
 .js .animate-box {

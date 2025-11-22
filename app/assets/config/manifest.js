@@ -1,3 +1,9 @@
 //= link_tree ../images
+//= link_tree ../fonts .eot
+//= link_tree ../fonts .svg
+//= link_tree ../fonts .ttf
+//= link_tree ../fonts .woff
+//= link_tree ../fonts .woff2
 //= link_directory ../javascripts .js
-//= link_directory ../stylesheets .css
+//= link_directory ../stylesheets
+//= link_tree ../../javascript .js
