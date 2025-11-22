@@ -7,3 +7,4 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+AdminUser.create!(email: 'admin@ipmps-site.com', password: 'ipmps-admin-password', password_confirmation: 'ipmps-admin-password') if Rails.env.development?

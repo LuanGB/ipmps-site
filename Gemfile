@@ -20,8 +20,15 @@ gem "image_processing", "~> 1.2"
 # scss / sass support
 gem 'dartsass-rails'
 
+# active admin
+gem 'activeadmin'
+gem 'devise'
+gem 'activeadmin_addons'
+gem 'mailcatcher', '~> 0.10.0'
+
 group :development, :test do
   gem "pry"
+  gem "foreman"
   gem "brakeman", require: false
   gem "rubocop-rails-omakase", require: false
 end
