@@ -26,6 +26,11 @@ gem 'devise'
 gem 'activeadmin_addons'
 gem 'mailcatcher', '~> 0.10.0'
 
+# i18n
+gem 'rails-i18n', '~> 8.0.0'
+gem 'kaminari-i18n'
+gem 'devise-i18n'
+
 group :development, :test do
   gem "pry"
   gem "foreman"
