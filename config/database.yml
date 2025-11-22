@@ -81,8 +81,9 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: ipmps_site_production
-    username: ipmps_site
+    host: <%= ENV.fetch("IPMPS_SITE_DATABASE_HOST") %>
+    database: <%= ENV.fetch("IPMPS_SITE_DATABASE_NAME") %>
+    username: <%= ENV.fetch("IPMPS_SITE_DATABASE_USERNAME") %>
     password: <%= ENV["IPMPS_SITE_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
