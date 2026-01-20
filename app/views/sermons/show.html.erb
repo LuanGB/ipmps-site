@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @sermon %>
+
+<div>
+  <%= link_to "Edit this sermon", edit_sermon_path(@sermon) %> |
+  <%= link_to "Back to sermons", sermons_path %>
+
+  <%= button_to "Destroy this sermon", @sermon, method: :delete %>
+</div>

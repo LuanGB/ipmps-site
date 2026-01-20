@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-  <title><%= content_for(:title) || "Ipmps Site" %></title>
+  <title><%= content_for(:title) || current_site_config.site_data["title"] || "Igreja Presbiteriana" %></title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="/icon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <meta property="og:title" content=""/>
+  <%# <meta property="og:title" content=""/>
   <meta property="og:image" content=""/>
   <meta property="og:url" content=""/>
   <meta property="og:site_name" content=""/>
@@ -28,7 +28,7 @@
   <meta name="twitter:title" content="" />
   <meta name="twitter:image" content="" />
   <meta name="twitter:url" content="" />
-  <meta name="twitter:card" content="" />
+  <meta name="twitter:card" content="" /> %>
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet"
@@ -57,33 +57,31 @@
   </head>
   <body>
     
-  <div class="fh5co-loader"></div>
+  <div class="marinas-loader"></div>
   
   <div id="page">
-  <nav class="fh5co-nav" role="navigation">
+  <nav class="marinas-nav" role="navigation">
 		<div class="container-wrap">
 			<div class="top-menu">
 				<div class="row">
 					<div class="col-md-12 col-offset-0 text-center">
-						<div id="fh5co-logo"><a href="index.html">Church</a></div>
+						<div id="marinas-logo"><a href="/"><%= current_site_config.site_data["title"] %></a></div>
 					</div>
 					<div class="col-md-12 col-md-offset-0 text-center menu-1">
 						<ul>
 							<li class="<%= 'active' if controller_name == 'site' && action_name == 'home' %>"><a href="<%= home_path %>">Home</a></li>
-							<li><a href="sermons.html">Sermons</a></li>
-							<li class="has-dropdown">
-								<a href="news.html">News</a>
+							<li class="<%= 'active' if controller_name == 'sermons' %>"><a href="<%= sermons_path %>">Sermões</a></li>
+							<li class="has-dropdown <%= 'active' if controller_name == 'news' %>">
+								<a href="<%= posts_path(category: :news) %>">Notícias</a>
 								<ul class="dropdown">
-									<li><a href="#">Ministry</a></li>
-									<li><a href="#">Medical Missionary</a></li>
-									<li><a href="#">Country Living</a></li>
-									<li><a href="#">Gospel Workers</a></li>
+									<li><a href="#">Ministério</a></li>
+									<li><a href="#">Missões</a></li>
 								</ul>
 							</li>
-							<li><a href="events.html">Events</a></li>
-							<li class="<%= 'active' if controller_name == 'site' && action_name == 'about' %>"><a href="<%= about_path %>">About</a></li>
-							<li class="<%= 'active' if controller_name == 'contacts' && action_name == 'new' %>"><a href="<%= new_path %>">Contact</a></li>
-							<li><a href="#" class="donate">Donate</a></li>
+							<li><a href=<%= posts_path(category: :events) %>>Eventos</a></li>
+							<li class="<%= 'active' if controller_name == 'site' && action_name == 'about' %>"><a href="<%= about_path %>">Sobre</a></li>
+							<li class="<%= 'active' if controller_name == 'contacts' %>"><a href="<%= new_path %>">Contato</a></li>
+							<li><a href="#" class="donate">Ofertas</a></li>
 						</ul>
 					</div>
 				</div>
@@ -96,27 +94,46 @@
   </div>
 
   <div class="container-wrap">
-    <footer id="fh5co-footer" role="contentinfo">
+    <footer id="marinas-footer" role="contentinfo">
       <div class="col-md-4 text-center">
-        <h3>198 West 21th Street, Suite 721 New York NY 10016</h3>
+        <% if current_site_config.site_data["address_link"].present? %>
+          <h3><a href="<%= current_site_config.site_data["address_link"] %>" target="_blank" rel="noopener"><%= current_site_config.site_data["address"] %></a></h3>
+        <% else %>
+          <h3><%= current_site_config.site_data["address"] %></h3>
+        <% end %>
+        <% if current_site_config.site_data["contact_phone"].present? %>
+          <p><i class="icon-phone"></i> <%= current_site_config.site_data["contact_phone"] %></p>
+        <% end %>
+        <% if current_site_config.site_data["contact_email"].present? %>
+          <p><i class="icon-envelope"></i> <%= current_site_config.site_data["contact_email"] %></p>
+        <% end %>
       </div>
       <div class="col-md-4 text-center">
-        <h2><a href="#">Church</a></h2>
+        <h2><%= current_site_config.site_data["title"] %></h2>
+        <% if current_site_config.site_data["worship_schedule"].present? %>
+          <p><i class="icon-clock"></i> <%= current_site_config.site_data["worship_schedule"] %></p>
+        <% end %>
       </div>
       <div class="col-md-4 text-center">
         <p>
-          <ul class="fh5co-social-icons">
-            <li><a href="#"><i class="icon-twitter2"></i></a></li>
-            <li><a href="#"><i class="icon-facebook2"></i></a></li>
-            <li><a href="#"><i class="icon-dribbble2"></i></a></li>
+          <ul class="marinas-social-icons">
+            <% if current_site_config.site_data["instagram"].present? %>
+              <li><a href="<%= current_site_config.site_data["instagram"] %>" target="_blank" rel="noopener"><i class="icon-instagram"></i></a></li>
+            <% end %>
+            <% if current_site_config.site_data["youtube"].present? %>
+              <li><a href="<%= current_site_config.site_data["youtube"] %>" target="_blank" rel="noopener"><i class="icon-youtube"></i></a></li>
+            <% end %>
+            <% if current_site_config.site_data["facebook"].present? %>
+              <li><a href="<%= current_site_config.site_data["facebook"] %>" target="_blank" rel="noopener"><i class="icon-facebook2"></i></a></li>
+            <% end %>
           </ul>
         </p>
       </div>
       <div class="row copyright">
         <div class="col-md-12 text-center">
           <p>
-            <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-            <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+            <small class="block">&copy; <%= Time.now.year %> Igreja Presbiteriana Marinas Praia Sul. Todos os Direitos Reservados .</small> 
+            <small class="block">Design por <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co (Todos os Direitos Reservados)</a> Desenvolvido por: <a href="http://beacons.ai/luangb" target="_blank">LuanGB</a></small>
           </p>
         </div>
       </div>

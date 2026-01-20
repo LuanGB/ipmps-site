@@ -1,6 +1,16 @@
+GIT
+  remote: https://github.com/mfairburn/activeadmin-select2.git
+  revision: f35b0367cca61266737c94ca9a94cd142c95b763
+  specs:
+    activeadmin-select2 (0.1.8)
+      activeadmin
+      jquery-rails
+      select2-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
+    ace-rails-ap (4.5)
     actioncable (8.0.4)
       actionpack (= 8.0.4)
       activesupport (= 8.0.4)
@@ -44,6 +54,8 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
+    active_admin_datetimepicker (1.1.0)
+      activeadmin (>= 2.14.0, < 4.0)
     active_material (1.5.2)
     activeadmin (3.4.0)
       arbre (~> 1.2, >= 1.2.1)
@@ -63,6 +75,14 @@ GEM
       sassc
       sassc-rails
       xdan-datetimepicker-rails (~> 2.5.1)
+    activeadmin_dark_color_scheme (0.1.13)
+      activeadmin (>= 2)
+      railties (>= 4)
+    activeadmin_json_editor (0.0.10)
+      ace-rails-ap
+      railties (>= 3.0)
+    activeadmin_quill_editor (2.0.0)
+      activeadmin (>= 2.9, < 4)
     activejob (8.0.4)
       activesupport (= 8.0.4)
       globalid (>= 0.3.6)
@@ -93,6 +113,9 @@ GEM
       uri (>= 0.13.1)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
+    annotaterb (4.20.0)
+      activerecord (>= 6.0.0)
+      activesupport (>= 6.0.0)
     arbre (1.7.0)
       activesupport (>= 3.0.0)
       ruby2_keywords (>= 0.0.2)
@@ -118,15 +141,26 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     coderay (1.1.3)
+    coffee-rails (5.0.0)
+      coffee-script (>= 2.2.0)
+      railties (>= 5.2.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
     concurrent-ruby (1.3.5)
     connection_pool (2.5.4)
     crass (1.0.6)
+    cronex (0.15.0)
+      tzinfo
+      unicode (>= 0.4.4.5)
     csv (3.3.5)
     daemons (1.4.1)
     dartsass-rails (0.5.1)
       railties (>= 6.0.0)
       sass-embedded (~> 1.63)
     date (3.5.0)
+    declarative (0.0.20)
     devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -136,7 +170,10 @@ GEM
     devise-i18n (1.15.0)
       devise (>= 4.9.0)
       rails-i18n
-    dotenv (3.1.8)
+    dotenv (3.2.0)
+    dotenv-rails (3.2.0)
+      dotenv (= 3.2.0)
+      railties (>= 6.1)
     drb (2.2.3)
     ed25519 (1.4.0)
     erb (6.0.0)
@@ -144,6 +181,13 @@ GEM
     et-orbi (1.4.0)
       tzinfo
     eventmachine (1.2.7)
+    execjs (2.10.0)
+    faraday (2.14.0)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
+    faraday-net_http (3.4.2)
+      net-http (~> 0.5)
     faye-websocket (0.11.3)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
@@ -161,8 +205,32 @@ GEM
     fugit (1.12.1)
       et-orbi (~> 1.4)
       raabro (~> 1.4)
+    gems (1.3.0)
     globalid (1.3.0)
       activesupport (>= 6.1)
+    google-api-client (0.53.0)
+      google-apis-core (~> 0.1)
+      google-apis-generator (~> 0.1)
+    google-apis-core (0.18.0)
+      addressable (~> 2.5, >= 2.5.1)
+      googleauth (~> 1.9)
+      httpclient (>= 2.8.3, < 3.a)
+      mini_mime (~> 1.0)
+      mutex_m
+      representable (~> 3.0)
+      retriable (>= 2.0, < 4.a)
+    google-apis-discovery_v1 (0.20.0)
+      google-apis-core (>= 0.15.0, < 2.a)
+    google-apis-generator (0.18.0)
+      activesupport (>= 5.0)
+      gems (~> 1.2)
+      google-apis-core (>= 0.15.0, < 2.a)
+      google-apis-discovery_v1 (~> 0.18)
+      thor (>= 0.20, < 2.a)
+    google-cloud-env (2.3.1)
+      base64 (~> 0.2)
+      faraday (>= 1.0, < 3.a)
+    google-logging-utils (0.2.0)
     google-protobuf (4.33.1)
       bigdecimal
       rake (>= 13)
@@ -178,9 +246,19 @@ GEM
     google-protobuf (4.33.1-x86_64-linux-musl)
       bigdecimal
       rake (>= 13)
+    googleauth (1.16.1)
+      faraday (>= 1.0, < 3.a)
+      google-cloud-env (~> 2.2)
+      google-logging-utils (~> 0.1)
+      jwt (>= 1.4, < 4.0)
+      multi_json (~> 1.11)
+      os (>= 0.9, < 2.0)
+      signet (>= 0.16, < 2.a)
     has_scope (0.9.0)
       actionpack (>= 7.0)
       activesupport (>= 7.0)
+    httpclient (2.9.0)
+      mutex_m
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     image_processing (1.14.0)
@@ -203,11 +281,16 @@ GEM
     jbuilder (2.14.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
+    jquery-minicolors-rails (2.2.6.2)
+      jquery-rails
+      rails (>= 3.2.8)
     jquery-rails (4.6.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (2.16.0)
+    jwt (3.1.2)
+      base64
     kamal (2.8.2)
       activesupport (>= 7.0)
       base64 (~> 0.2)
@@ -264,8 +347,12 @@ GEM
     mini_portile2 (2.8.9)
     minitest (5.26.2)
     msgpack (1.8.0)
+    multi_json (1.19.1)
     mustermann (3.0.4)
       ruby2_keywords (~> 0.0.1)
+    mutex_m (0.3.0)
+    net-http (0.9.1)
+      uri (>= 0.11.1)
     net-imap (0.5.12)
       date
       net-protocol
@@ -294,6 +381,7 @@ GEM
     nokogiri (1.18.10-x86_64-linux-musl)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    os (1.1.4)
     ostruct (0.6.3)
     parallel (1.27.0)
     parser (3.3.10.0)
@@ -378,13 +466,20 @@ GEM
       psych (>= 4.0.0)
       tsort
     redcarpet (3.6.1)
+    redis-client (0.26.3)
+      connection_pool
     regexp_parser (2.11.3)
     reline (0.6.3)
       io-console (~> 0.5)
+    representable (3.2.0)
+      declarative (< 0.1.0)
+      trailblazer-option (>= 0.1.1, < 0.2.0)
+      uber (< 0.2.0)
     require_all (3.0.0)
     responders (3.2.0)
       actionpack (>= 7.0)
       railties (>= 7.0)
+    retriable (3.1.2)
     rexml (3.4.4)
     rubocop (1.81.7)
       json (~> 2.3)
@@ -441,12 +536,29 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
+    select2-rails (4.0.13)
     selenium-webdriver (4.38.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
+    sidekiq (7.3.10)
+      base64
+      connection_pool (>= 2.3.0, < 3)
+      logger
+      rack (>= 2.2.4, < 3.3)
+      redis-client (>= 0.23.0, < 1)
+    sidekiq-cron (2.3.1)
+      cronex (>= 0.13.0)
+      fugit (~> 1.8, >= 1.11.1)
+      globalid (>= 1.0.1)
+      sidekiq (>= 6.5.0)
+    signet (0.21.0)
+      addressable (~> 2.8)
+      faraday (>= 0.17.5, < 3.a)
+      jwt (>= 1.5, < 4.0)
+      multi_json (~> 1.10)
     sinatra (3.2.0)
       mustermann (~> 3.0)
       rack (~> 2.2, >= 2.2.4)
@@ -498,12 +610,15 @@ GEM
     thruster (0.1.16-x86_64-linux)
     tilt (2.6.1)
     timeout (0.4.4)
+    trailblazer-option (0.1.2)
     tsort (0.2.0)
     turbo-rails (2.0.20)
       actionpack (>= 7.1.0)
       railties (>= 7.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    uber (0.1.0)
+    unicode (0.4.4.5)
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
     unicode-emoji (4.1.0)
@@ -540,19 +655,30 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  active_admin_datetimepicker
   activeadmin
+  activeadmin-select2!
   activeadmin_addons
+  activeadmin_dark_color_scheme
+  activeadmin_json_editor
+  activeadmin_quill_editor
+  annotaterb
   bootsnap
   brakeman
   capybara
+  coffee-rails
   dartsass-rails
   devise
   devise-i18n
+  dotenv-rails
   foreman
+  google-api-client
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
+  jquery-minicolors-rails
   kamal
+  kaminari
   kaminari-i18n
   mailcatcher (~> 0.10.0)
   pg (~> 1.1)
@@ -562,7 +688,10 @@ DEPENDENCIES
   rails (~> 8.0.2, >= 8.0.2.1)
   rails-i18n (~> 8.0.0)
   rubocop-rails-omakase
+  select2-rails
   selenium-webdriver
+  sidekiq
+  sidekiq-cron
   solid_cable
   solid_cache
   solid_queue
@@ -570,6 +699,9 @@ DEPENDENCIES
   thruster
   turbo-rails
   web-console
+
+RUBY VERSION
+   ruby 3.4.5p51
 
 BUNDLED WITH
    2.7.2

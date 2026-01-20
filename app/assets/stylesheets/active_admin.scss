@@ -10,8 +10,20 @@
 // Active Admin's got SASS!
 @import "active_admin/mixins";
 @import "active_admin/base";
+@import "activeadmin-dark-color-scheme"; // NOT WORKING FOR SOME REASON
 
 // Overriding any non-variable Sass must be done after the fact.
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+
+@import "active_admin_datetimepicker";
+@import "activeadmin/quill_editor/quill.snow";
+@import "activeadmin/quill_editor_input";
+@import "activeadmin/quill.imageUploader.min";
+@import "active_admin/select2/base";
+//@import "@activeadmin-plugins/active_admin_datetimepicker";
+
+.ql-editor {
+  background: #666 !important;
+}

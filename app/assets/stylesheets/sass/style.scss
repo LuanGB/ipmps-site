@@ -182,7 +182,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 }
 
-.fh5co-nav {
+.marinas-nav {
 	margin: 0;
 	@media screen and (max-width: $screen-sm ) {
 		margin: 0;
@@ -194,7 +194,7 @@ h1, h2, h3, h4, h5, h6, figure {
 		}
 
 	}
-	#fh5co-logo {
+	#marinas-logo {
 		font-size: 45px;
 		margin: 0;
 		padding: 1em 0;
@@ -369,15 +369,15 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 }
 
-#fh5co-counter,
-.fh5co-bg{
+#marinas-counter,
+.marinas-bg{
 	background-size: cover;
 	background-position: top center;
 	background-repeat: no-repeat;
 	position: relative;
 }
 
-.fh5co-video {
+.marinas-video {
 	overflow: hidden;
 	@media screen and (max-width: $screen-md){
 		height: 450px;
@@ -434,7 +434,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 }
 
-#fh5co-hero {
+#marinas-hero {
 	height: 500px;
 	background: $brand-white url(loader.gif) no-repeat center center;
 	width: 100%;
@@ -540,7 +540,7 @@ h1, h2, h3, h4, h5, h6, figure {
 						font-size: 30px;
 					}
 				}s
-				.fh5co-lead{
+				.marinas-lead{
 					font-size: 20px;
 					color: $brand-white;
 					.icon-heart {
@@ -570,19 +570,19 @@ h1, h2, h3, h4, h5, h6, figure {
 
 
 
-.fh5co-light-grey{
+.marinas-light-grey{
 	background: lighten($brand-black,98%);
 }
 
-#fh5co-about,
-#fh5co-services,
-#fh5co-contact,
-#fh5co-sermon,
-#fh5co-bible-verse,
-#fh5co-news,
-#fh5co-events,
-#fh5co-counter,
-#fh5co-footer{
+#marinas-about,
+#marinas-services,
+#marinas-contact,
+#marinas-sermon,
+#marinas-bible-verse,
+#marinas-news,
+#marinas-events,
+#marinas-counter,
+#marinas-footer{
 	padding: 5em 3em;
 	clear: both;
 	@media screen and (max-width: $screen-sm) {
@@ -590,7 +590,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 }
 
-#fh5co-intro{
+#marinas-intro{
 	padding: 3em 3em;
 	clear: both;
 	h2{
@@ -756,7 +756,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 //Bible Verse
-#fh5co-bible-verse {
+#marinas-bible-verse {
 	background: $brand-primary;
 	position: relative;
 	.bible-verse-slide{
@@ -806,7 +806,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 // Counters
-.fh5co-counters {
+.marinas-counters {
 	padding: 3em 0;
 	background-size: cover;
 	background-attachment: fixed;
@@ -814,7 +814,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	.counter-wrap{
 		border: 1px solid red !important;
 	}
-	.fh5co-counter {
+	.marinas-counter {
 		font-size: 40px;
 		display: block;
 		color: rgba($brand-black,1);
@@ -824,7 +824,7 @@ h1, h2, h3, h4, h5, h6, figure {
 		margin-bottom: .3em;
 		font-family: $font-secondary;
 	}
-	.fh5co-counter-label {
+	.marinas-counter-label {
 		font-size: 12px;
 		margin-bottom: 2em;
 		display: block;
@@ -895,7 +895,7 @@ input[type="text"] {
 }
 
 
-.fh5co-social-icons {
+.marinas-social-icons {
 	margin: 0;
 	padding: 0;
 	li {
@@ -916,7 +916,7 @@ input[type="text"] {
 }
 
 
-.fh5co-heading {
+.marinas-heading {
 	margin-bottom: 5em;
 	h2 {
 		font-size: 30px;
@@ -935,14 +935,14 @@ input[type="text"] {
 }
 
 
-#fh5co-footer {
+#marinas-footer {
 	margin-top: 20px !important;
 	background: #586E72;
 	color: rgba($brand-white,.7) !important;
 	a{
 		color: rgba($brand-white,1) !important;
 	}
-	.fh5co-footer-links {
+	.marinas-footer-links {
 		padding: 0;
 		margin: 0;
 		@media screen and(max-width: $screen-sm){
@@ -974,7 +974,7 @@ input[type="text"] {
 		font-style: 28px;
 	}
 	p{
-		.fh5co-social-icons{
+		.marinas-social-icons{
 			border: 1px solid red;
 			margin: 0 !important;
 		}
@@ -990,7 +990,7 @@ input[type="text"] {
 }
 
 // off canvas
-#fh5co-offcanvas {
+#marinas-offcanvas {
 	position: absolute;
 	z-index: 1901;
 	width: 270px;
@@ -1093,7 +1093,7 @@ input[type="text"] {
 
 
 // Burger Menu
-.fh5co-nav-toggle {
+.marinas-nav-toggle {
   width:25px;
   height:25px;
   cursor: pointer;
@@ -1129,7 +1129,7 @@ input[type="text"] {
 		  transition:all .2s ease-out;
 	  }
   }
-  &.fh5co-nav-white {
+  &.marinas-nav-white {
   	> i {
   		color:$brand-white;
   		background: $brand-black;
@@ -1140,22 +1140,22 @@ input[type="text"] {
   }
 }
 
-.fh5co-nav-toggle i::before {
+.marinas-nav-toggle i::before {
   top: -7px;
 }
-.fh5co-nav-toggle i::after {
+.marinas-nav-toggle i::after {
   bottom: -7px;
 }
-.fh5co-nav-toggle:hover i::before {
+.marinas-nav-toggle:hover i::before {
   top: -10px;
 }
-.fh5co-nav-toggle:hover i::after {
+.marinas-nav-toggle:hover i::after {
   bottom: -10px;
 }
-.fh5co-nav-toggle.active i {
+.marinas-nav-toggle.active i {
 	background: transparent;
 }
-.fh5co-nav-toggle.active i::before {
+.marinas-nav-toggle.active i::before {
   top:0;
   -webkit-transform: rotateZ(45deg);
      -moz-transform: rotateZ(45deg);
@@ -1164,7 +1164,7 @@ input[type="text"] {
           transform: rotateZ(45deg);
           background: $brand-white;
 }
-.fh5co-nav-toggle.active i::after {
+.marinas-nav-toggle.active i::after {
   bottom:0;
   -webkit-transform: rotateZ(-45deg);
      -moz-transform: rotateZ(-45deg);
@@ -1173,7 +1173,7 @@ input[type="text"] {
           transform: rotateZ(-45deg);
           background: $brand-white;
 }
-.fh5co-nav-toggle {
+.marinas-nav-toggle {
   position: absolute;
   right: 0px;
   top: 65px;
@@ -1363,7 +1363,7 @@ input[type="text"] {
    margin: 0 !important;
 }
 
-.fh5co-loader {
+.marinas-loader {
 	position: fixed;
 	left: 0px;
 	top: 0px;

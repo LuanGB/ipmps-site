@@ -1,0 +1,26 @@
+<div class="container-wrap">
+  <aside id="marinas-hero">
+    <div class="flexslider">
+      <ul class="slides">
+        <li style="background-image: url(<%= @post.cover_path %>);">
+          <div class="overlay"></div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 text-center slider-text">
+                <div class="slider-text-inner">
+                  <h1><%= @post.title %></h1>
+                  <h2><%= @post.description %></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </aside>
+  <div id="marinas-news" style="padding-top: 25px;">
+    <div class="row">
+      <%= @post.html_safe_content %>
+    </div>
+  </div>
+</div><!-- END container-wrap -->

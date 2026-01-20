@@ -1,0 +1,33 @@
+<% content_for :title, "Sermões" %>
+
+<div id="marinas-sermon">
+  <div class="row animate-box">
+    <div class="col-md-6 col-md-offset-3 text-center marinas-heading">
+      <h2>Sermões</h2>
+      <p>Assista aos nossos sermões e fortaleça sua fé com a Palavra de Deus</p>
+    </div>
+  </div>
+  <div class="row equal-height-container">
+    <% @sermons.each do |sermon| %>
+      <div class="col-md-4 text-center animate-box">
+        <div class="sermon-entry">
+          <div class="sermon" style="background-image: url(<%= sermon.thumbnail_url || 'images/sermon-1.jpg' %>);">
+            <div class="play">
+              <% if sermon.youtube_url.present? %>
+                <a class="popup-youtube" href="<%= sermon.youtube_url %>"><i class="icon-play3"></i></a>
+              <% end %>
+            </div>
+          </div>
+          <h3><%= link_to sermon.title, sermon %></h3>
+          <% if sermon.published_at.present? %>
+            <span><%= l(sermon.published_at, format: :long) %></span>
+          <% end %>
+          <% if sermon.duration.present? %>
+            <p><i class="icon-clock"></i> <%= sermon.duration %></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= paginate @sermons %>
+</div>

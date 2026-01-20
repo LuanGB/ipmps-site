@@ -1,0 +1,26 @@
+<div id="marinas-news">
+  <div class="row animate-box">
+    <div class="col-md-6 col-md-offset-3 text-center marinas-heading">
+      <h2><%=@page_title%></h2>
+      <p>Esteja informado das últimas atividades e notícias da nossa comunidade</p>
+    </div>
+  </div>
+  <div class="row equal-height-container">
+    <% @posts.each do |post| %>
+      <div class="col-md-3 animate-box">
+        <div class="news">
+          <a href="<%= post_path(post) %>" class="img-holder">
+            <img class="img-responsive" src="<%= post.thumbnail_path %>" alt="image of the post <%= post.title&.downcase %>">
+          </a>
+          <div class="desc">
+            <span class="date"><%= post.publication_date %></span>
+            <h3><a href="<%= post_path(post) %>"><%= post.title %></a></h3>
+            <p><%= post.description.truncate(100).truncate_words(20, omission: '...') %></p>
+            <a href="<%= post_path(post) %>">Leia Mais <i class="icon-arrow-right3"></i></a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<%= paginate @posts %>
+</div>

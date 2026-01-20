@@ -1,0 +1,11 @@
+---
+:queues:
+  - default
+  - mailers
+
+:schedule:
+  import_youtube_sermons:
+    cron: '0 0 * * 0'  # Todo domingo à meia-noite (00:00)
+    class: ImportYoutubeSermonsJob
+    queue: default
+    description: 'Importa automaticamente os últimos sermões do canal do YouTube'

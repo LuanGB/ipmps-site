@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@activeadmin-plugins/active_admin_datetimepicker": "^1.0.0"
+  }
+}

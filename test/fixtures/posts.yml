@@ -1,0 +1,24 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# == Schema Information
+#
+# Table name: posts
+#
+#  id               :bigint           not null, primary key
+#  category         :string
+#  content          :string
+#  description      :text
+#  publication_date :datetime
+#  title            :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+one:
+  title: MyString
+  content: MyString
+  publication_date: 2026-01-20 13:28:45
+
+two:
+  title: MyString
+  content: MyString
+  publication_date: 2026-01-20 13:28:45
