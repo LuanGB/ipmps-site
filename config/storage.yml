@@ -14,6 +14,7 @@ cloudflare:
   secret_access_key: <%= ENV.fetch("CLOUDFLARE_SECRET_ACCESS_KEY", nil) %>
   region: auto
   bucket: <%= ENV.fetch("CLOUDFLARE_BUCKET_NAME", nil) %>
+  request_checksum_calculation: when_required
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
