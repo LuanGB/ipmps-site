@@ -55,6 +55,9 @@ gem "google-api-client"
 gem "sidekiq"
 gem "sidekiq-cron"
 
+# JS
+gem 'mini_racer'
+
 group :development, :test do
   gem "dotenv-rails", require: false
   gem "pry"
